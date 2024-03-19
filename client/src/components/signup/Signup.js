@@ -23,7 +23,7 @@ let navigate=useNavigate()
          setState(true);
          setSignupSuccess(true);
          setErr("");
-         navigate('/Signin')
+         navigate('/signin')
        } else {
          setErr(res.data.message);
        }
@@ -32,14 +32,34 @@ let navigate=useNavigate()
     let res = await axios.post("http://localhost:4000/author-api/author", userObj);
     console.log(res);
      console.log(userObj)
-     if (res.status === 201 ||  res.data.message==='user created') {
+     if (res.status === 201 ||  res.data.message==='Author created') {
        setState(true);
        setSignupSuccess(true);
        setErr("");
-       navigate('/Signin')
-     } else {
+       navigate('/signin')
+     }
+    
+     else  {
        setErr(res.data.message);
      }
+
+   }
+   else{
+    let res = await axios.post("http://localhost:4000/admin-api/admin", userObj);
+    console.log(res);
+     console.log(userObj)
+     if (res.status === 201 ||  res.data.message==='Admin created') {
+       setState(true);
+       setSignupSuccess(true);
+       setErr("");
+       navigate('/signin')
+     }
+    
+     else  {
+       setErr(res.data.message);
+     }
+
+     
    }
   }
 
@@ -97,6 +117,22 @@ let navigate=useNavigate()
                       style={{ color: "var(--crimson)" }}
                     >
                       Author
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      className="form-check-input"
+                      id="admin"
+                      value="admin"
+                      {...register("userType", { required:true,disabled: state })}
+                    />
+                    <label
+                      htmlFor="admin"
+                      className="form-check-label"
+                      style={{ color: "var(--crimson)" }}
+                    >
+                      Admin
                     </label>
                   </div>
                   <div className="form-check form-check-inline">

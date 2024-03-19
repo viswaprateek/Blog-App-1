@@ -19,14 +19,20 @@ function Signin() {
   function onSignUpFormSubmit(userCred) {
     dispatch(userAuthorLoginThunk(userCred));
   }
+ // USED IF ELSE INSTED OF IF IF 
+ // IF U ADD ADMIN USE IF IF AGAIN 
 
   useEffect(() => {
     if (loginUserStatus) {
-      if (currentUser.userType === "user") {
-        navigate("/user-profile");
-      }
+     
       if (currentUser.userType === "author") {
         navigate("/author-profile");
+      }
+      else if (currentUser.userType === "user") {
+        navigate("/user-profile");
+      }
+      else{
+        navigate("/admin-profile");
       }
     }
   }, [loginUserStatus]);
@@ -81,6 +87,18 @@ function Signin() {
                     />
                     <label htmlFor="user" className="form-check-label">
                       User
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      className="form-check-input"
+                      id="admin"
+                      value="admin"
+                      {...register("userType")}
+                    />
+                    <label htmlFor="author" className="form-check-label">
+                      Admin
                     </label>
                   </div>
                 </div>

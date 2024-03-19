@@ -76,7 +76,7 @@ function Footer() {
                 Contact Us
               </h6>
               <p className="contact-info mt-4">
-                Contact us if need help withanything
+                Contact us if need help with anything
               </p>
               <p className="contact-info">+91 9999999999</p>
             </div>
@@ -85,7 +85,7 @@ function Footer() {
       </div>
 
       <div className="text-center mt-5">
-        <p className="footer-alt mb-0 f-14">2019 © VNR, All Rights Reserved</p>
+        <p className="footer-alt mb-0 f-14">All Rights Reserved</p>
       </div>
     </footer>
   );

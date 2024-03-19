@@ -20,7 +20,6 @@ function Article() {
   let { currentUser } = useSelector(
     (state) => state.userAuthoruserAuthorLoginReducer
   );
-
   let { register, handleSubmit } = useForm();
   let [comment, setComment] = useState("");
   let navigate = useNavigate();

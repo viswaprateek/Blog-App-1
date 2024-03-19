@@ -4,7 +4,7 @@ import articleImage from "../../assets/Article-Writing-1.jpg";
 function Home() {
   return (
     <div className='articleHome'>
-      <h1 style={{color:'var(--crimson)'}}> Ocean of Knowledge</h1>
+      <h1 style={{color:"black" }}> Ocean of Knowledge</h1>
       <img src={articleImage} alt="" className="artcleImage" />
       <p className="lead">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore officia

@@ -25,7 +25,7 @@ authorApp.post('/author',expressAsyncHandler(async(req,res)=>{
     const dbuser=await authorscollection.findOne({username:newUser.username})
     //if user found in db
     if(dbuser!==null){
-        res.send({message:"User existed"})
+        res.send({message:"Author existed"})
     }else{
         //hash the password
         const hashedPassword=await bcryptjs.hash(newUser.password,6)
