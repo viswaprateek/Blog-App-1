@@ -19,7 +19,9 @@ let navigate=useNavigate()
       let res = await axios.post("http://localhost:4000/user-api/user", userObj);
       console.log(res);
        console.log(userObj)
-       if (res.status === 201 || res.data.message==='user created') {
+       console.log(res.data.message)
+       if (res.status === 200 || res.data.message==='user created') {
+        
          setState(true);
          setSignupSuccess(true);
          setErr("");
