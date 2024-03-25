@@ -56,5 +56,5 @@ app.use((err,req,res,next)=>{
     res.send({message:"error",payload:err.message})
 })
 //assign port number
-const port=process.env.PORT || 4000;
+const port= "https://blog-app-1-1.onrender.com" ;
 app.listen(port,()=>console.log(`Web server on port ${port}`))
