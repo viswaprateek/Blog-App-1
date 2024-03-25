@@ -16,7 +16,7 @@ function Signup() {
 let navigate=useNavigate()
   async function onSignUpFormSubmit(userObj) {
     if (userObj.userType==='user'){
-      let res = await axios.post("http://localhost:4000/user-api/user", userObj);
+      let res = await axios.post("https://blog-app-1-1.onrender.com/user-api/user", userObj);
       console.log(res);
        console.log(userObj)
        console.log(res.data.message)
@@ -31,7 +31,7 @@ let navigate=useNavigate()
        }
     }
    else if(userObj.userType==='author'){
-    let res = await axios.post("http://localhost:4000/author-api/author", userObj);
+    let res = await axios.post("https://blog-app-1-1.onrender.com/author-api/author", userObj);
     console.log(res);
      console.log(userObj)
      if (res.status === 201 ||  res.data.message==='Author created') {
@@ -47,7 +47,7 @@ let navigate=useNavigate()
 
    }
    else{
-    let res = await axios.post("http://localhost:4000/admin-api/admin", userObj);
+    let res = await axios.post("https://blog-app-1-1.onrender.com/admin-api/admin", userObj);
     console.log(res);
      console.log(userObj)
      if (res.status === 201 ||  res.data.message==='Admin created') {

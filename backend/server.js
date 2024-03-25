@@ -56,4 +56,5 @@ app.use((err,req,res,next)=>{
     res.send({message:"error",payload:err.message})
 })
 //assign port number
-app.listen(() => console.log(`Web Server started on ${process.env.RENDER_URL}`));
+const port=process.env.PORT || 4000;
+app.listen(port,()=>console.log(`Web server on port ${port}`))
