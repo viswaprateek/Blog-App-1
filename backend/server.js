@@ -56,5 +56,4 @@ app.use((err,req,res,next)=>{
     res.send({message:"error",payload:err.message})
 })
 //assign port number
-const port= "https://blog-app-1-1.onrender.com" ;
-app.listen(port,()=>console.log(`Web server on port ${port}`))
+app.listen(() => console.log(`Web Server started on ${process.env.RENDER_URL}`));
